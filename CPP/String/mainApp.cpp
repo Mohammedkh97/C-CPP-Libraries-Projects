@@ -37,5 +37,33 @@ int main()
     stringCopy(emptyString, string2, ARRAY_SIZE, sizeof(string2));
     std::cout << emptyString << std::endl;
 
+/*==========================================================================*/
+
+    //   std::string str;
+    char str[100]; // assuming max length of input is 99 characters
+    char ch = 0;
+    int i = 0;
+    std::cout << "Enter a string: ";
+    //    ch = std::cin.get(); // Read one character at a time
+    // Read characters using a for loop
+    for (i = 0; i < (sizeof(str) - 1); i++)
+    {
+        ch = std::cin.get(); // Read one character at a time
+        //    std::cin >> str[i];
+        /*  Why std::cin.get() is needed : std::cin >> str[i] will not capture spaces or newlines because it skips whitespace.
+            This is why std::cin.get() is used instead, as it can read all characters including spaces and the newline.if (ch == '\n')
+        */
+        if (ch == '\n')
+        {                  // Stop when Enter key (newline) is pressed
+            str[i] = '\0'; // Null-terminate the string
+            break;
+        }
+
+        str[i] = ch; // Store the character in the string array
+    }
+    str[i] = '\0'; // Null-terminate the string
+
+    std::cout << "You entered: " << str << std::endl;
+
     return 0;
 }
