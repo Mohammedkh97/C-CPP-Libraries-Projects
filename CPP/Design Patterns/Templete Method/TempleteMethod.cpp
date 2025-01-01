@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory> // For smart pointers
+
 class AbstractClass
 {
 public:
