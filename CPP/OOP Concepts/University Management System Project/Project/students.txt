@@ -1,0 +1,4 @@
+Ahmed 21 10024 3
+cd 0 4946992 0
+asdfn 24 124 2.54
+Name: Mohammed Age: 26 ID: 145 GPA: 3.2
