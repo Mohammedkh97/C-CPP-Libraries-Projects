@@ -1,6 +1,5 @@
 Here is the content converted to a Markdown (`.md`) file:
 
-```markdown
 # Design Patterns in C++
 
 Design patterns in C++ are reusable solutions to common software design problems. They represent best practices that have been refined over time and are widely applicable in various scenarios. These patterns help in building maintainable, flexible, and scalable systems by solving recurring problems in object-oriented design.
