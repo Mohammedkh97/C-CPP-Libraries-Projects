@@ -59,6 +59,8 @@ without worrying about the concrete class that will be instantiated.
 #include <memory>
 #include <string>
 
+
+
 // Abstract product class / Abstract base class for all products
 class AbstractProduct
 {
