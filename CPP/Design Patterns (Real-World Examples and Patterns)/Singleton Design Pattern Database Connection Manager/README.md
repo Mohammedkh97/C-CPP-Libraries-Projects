@@ -1,8 +1,3 @@
-Here’s a simple `README.md` file that you can include in your project. It explains how to build, use, and understand the `DatabaseConnectionManager` Singleton implementation.
-
-### **README.md**
-
-```markdown
 # Singleton Design Pattern - Database Connection Manager
 
 ## Overview
