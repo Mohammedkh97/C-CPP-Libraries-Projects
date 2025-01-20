@@ -1,7 +1,3 @@
-Here is an example of how you can structure the **README.md** file to mention the features used in your project:
-
----
-
 # University Management System
 
 This project implements a **University Management System** designed to manage the administration of university entities such as **Students**, **Instructors**, **Employees**, **Courses**, **Departments**, **Faculties**, and **University** itself.
