@@ -12,9 +12,10 @@ Integer promotion is an implicit conversion that converts small integer types (c
    - short int (signed/unsigned)
    - bool
    - enums
-   Are promoted to:
-   - int (if int can hold all values of the original type)
-   - unsigned int (otherwise)
+
+     Are promoted to:
+         - int (if int can hold all values of the original type)
+         - unsigned int (otherwise)
 
 2. **Promotion Hierarchy** 📈
    ```
