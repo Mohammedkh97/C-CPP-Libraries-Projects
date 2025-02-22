@@ -21,6 +21,7 @@ void intoString(s32 num, u8 *str);
 void floatToString(f32 num, u8 *buffer, u16 decimalPlaces);
 void printString(u8 *str);
 void printArrayOfPointers(u8 **arr, u16 size);
+void stringConcat_unlimited(u8 *str1, u16 str1_size, ...);
 void UpperTolower(u8 *str);
 u8 compareChar(u8 *str1, u8 *str2);
 u8 compareCharNotCaseSensitive(u8 *str1, u8 *str2);

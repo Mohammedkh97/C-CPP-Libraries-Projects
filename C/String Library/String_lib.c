@@ -6,6 +6,7 @@
  */
 
 #include "stdTypes.h"
+#include <stdio.h>
 #include <stdarg.h>
 #include "String_lib.h"
 
@@ -25,6 +26,22 @@ void swapPointers(u8 **p1, u8 **p2)
     temp = *p1;
     *p1 = *p2;
     *p2 = temp;
+}
+
+void printString(u8 *str)
+{
+    printf("String: %s\n", str);
+}
+
+// Print the string without using printf
+void printString2(u8 *str)
+{
+    while (*str)
+    {
+        putchar(*str);
+        str++;
+    }
+    putchar('\n');
 }
 
 // Appends a character to the end of a string, ensuring there is space in the string buffer.
@@ -62,40 +79,58 @@ void stringConcat(u8 *str1, u8 *str2, u16 str1_size)
         str2++;
     }
 
-    // Null-terminate the result string
-    *str1 = '\n';
+    // Null-terminate the result string correctly
+    *str1 = '\0';
 }
 
-// Concatenates multiple strings (passed as variadic arguments) into str1, with each string added in sequence.
+// Concatenates multiple strings into str1, ensuring buffer safety.
 void stringConcat_unlimited(u8 *str1, u16 str1_size, ...)
 {
     va_list args;
     u8 *str2;
+    u16 current_length = string_len(str1);
 
-    // Initialize the argument list
-    va_start(args, str1_size);
-
-    // Iterate through all the additional string arguments
-    while ((str2 = va_arg(args, const u8 *)) != Null_Ptr)
+    if (current_length >= str1_size - 1)
     {
-        stringConcat(str1, str2, str1_size);
-
-        // Update the size to prevent buffer overflow
-        str1_size -= (u16)string_len(str1);
+        return;
     }
 
-    // Clean up the argument list
+    va_start(args, str1_size);
+
+    while ((str2 = va_arg(args, u8 *)) != NullPtr)
+    {
+        u16 str2_length = string_len(str2);
+
+        // Prevent overwriting buffer
+        if (current_length + str2_length >= str1_size - 1)
+        {
+            str2_length = str1_size - current_length - 1;
+        }
+
+        // Append the string correctly
+        if (str2_length > 0)
+        {
+            stringConcat(str1 + current_length, str2, str2_length + 1);
+            current_length += str2_length;
+        }
+
+        if (current_length >= str1_size - 1)
+        {
+            break;
+        }
+    }
+
     va_end(args);
 }
 
 // Returns the length of the given string (not including the null-terminator).
 u16 string_len(u8 *str)
 {
-    u8 i;
-    for (i = 0; str[i]; i++)
+    u16 i = 0;
+    while (str[i])
     {
+        i++;
     }
-
     return i;
 }
 
