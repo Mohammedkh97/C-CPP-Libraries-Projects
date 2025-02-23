@@ -1,6 +1,6 @@
 ## Integer Promotion: Core Concepts and Rules
 
-### 1. What is Integer Promotion? 🤔
+### 1. What is Integer Promotion?
 Integer promotion is an implicit conversion that converts small integer types (char, short, enums, and bit-fields) to larger integer types (typically int) when they're used in expressions.
 
 ### 2. Basic Rules of Integer Promotion:
