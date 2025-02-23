@@ -1,5 +1,3 @@
-Let me explain the key concepts of Integer Promotion in C++ with detailed explanations! 🎯
-
 ## Integer Promotion: Core Concepts and Rules
 
 ### 1. What is Integer Promotion? 🤔
